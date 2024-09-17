@@ -12,7 +12,7 @@ endif()
 project ("low_prog")
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (low_prog "low_prog.cpp" )
+add_executable (low_prog "xorshift128_1.cpp" )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET low_prog PROPERTY CXX_STANDARD 20)
