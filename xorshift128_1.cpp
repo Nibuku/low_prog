@@ -5,8 +5,6 @@
 
 #include <stdio.h>
 
-int array[100];
-
 int main()
 {
 	int seed[4]; //88675123

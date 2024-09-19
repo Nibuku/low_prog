@@ -1,7 +1,6 @@
 // Реализация на упрощенном С
 #include <stdio.h>
 
-int array[100];
 
 int main()
 {
@@ -25,13 +24,16 @@ cycle_start:
 		seed[2] = seed[1];
 		seed[1] = s;
 
-		int tmp = t << 11;
+		int tmp = t;
+		tmp<<= 11;
 		t ^= tmp;
 
-		tmp = t >> 8;
+		int tmp = t;
+		tmp >> 8;
 		t ^= tmp;
 
-		int s_tmp = s >> 19;
+		int s_tmp = s;
+		s_tmp >>= 19
 		t ^= s;
 		t ^= s_tmp;
 		seed[0] = t 
