@@ -8,7 +8,7 @@
 int main()
 {
 	int seed[4]; //88675123
-	scanf("%d", &seed[0]);
+	scanf("%u", &seed[0]);
 
 	seed[1] = 123456789;
 	seed[2] = 362436069;
@@ -28,7 +28,7 @@ int main()
 		t ^= t << 11;
 		t ^= t >> 8;
 		seed[0] = t ^ s ^ (s >> 19);
-		printf("%d ", seed[0]);
+		printf("%u ", seed[0]);
 	}
 	return 0;
 }

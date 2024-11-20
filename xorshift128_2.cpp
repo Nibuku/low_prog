@@ -5,7 +5,7 @@
 int main()
 {
 	int seed[4]; //88675123
-	scanf("%d", &seed[0]);
+	scanf("%u", &seed[0]);
 
 	seed[1] = 123456789;
 	seed[2] = 362436069;
@@ -16,31 +16,32 @@ int main()
 	int i = 0;
 
 cycle_start:
+	int t, s, tmp, s_tmp;
 	if (i == n) goto cycle_end;
-		int t = seed[3];
-		int s = seed[0];
+		t = seed[3];
+		s = seed[0];
 
 		seed[3] = seed[2];
 		seed[2] = seed[1];
 		seed[1] = s;
 
-		int tmp = t;
+		tmp = t;
 		tmp<<= 11;
 		t ^= tmp;
 
-		int tmp = t;
-		tmp >> 8;
+		tmp = t;
+		tmp=tmp >> 8;
 		t ^= tmp;
 
-		int s_tmp = s;
-		s_tmp >>= 19
-		t ^= s;
-		t ^= s_tmp;
-		seed[0] = t 
-		printf("%d ", seed[0]);
+		s_tmp = s;
+		s_tmp >>= 19;
+		s=s^s_tmp;
+		t=t^s;
+		seed[0] = t;
+		printf("%u ", seed[0]);
 		i+=1;
-	}
-goto start_cycle;
+	
+		goto cycle_start;
 cycle_end:
 	return 0;
 }
